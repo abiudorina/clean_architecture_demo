@@ -9,7 +9,9 @@ class GetConcreteNumberTrivia {
 
   GetConcreteNumberTrivia(this.numberTriviaRepository);
 
-  Future<Either<Failures, NumberTrivia>> execute({@required int number}) async {
+  /// dart contains callable classes, so we just use the [call()] method to
+  /// make this class callable
+  Future<Either<Failures, NumberTrivia>> call({@required int number}) async {
     return await numberTriviaRepository.getConcreteNumberTrivia(number);
   }
 }
